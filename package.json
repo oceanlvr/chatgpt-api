@@ -1,6 +1,6 @@
 {
-  "name": "chatgpt",
-  "version": "1.4.0",
+  "name": "@oceanlvr/chatgpt",
+  "version": "1.0.5",
   "description": "Node.js client for the unofficial ChatGPT API.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "repository": "transitive-bullshit/chatgpt-api",
@@ -38,7 +38,7 @@
   "dependencies": {
     "eventsource-parser": "^0.0.5",
     "expiry-map": "^2.0.0",
-    "node-fetch": "2",
+    "node-fetch": "^3.3.0",
     "remark": "^14.0.2",
     "strip-markdown": "^5.0.0",
     "uuid": "^9.0.0"
@@ -46,7 +46,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/node": "^18.11.9",
-    "@types/node-fetch": "2",
+    "@types/node-fetch": "^2.6.2",
     "@types/uuid": "^9.0.0",
     "ava": "^5.1.0",
     "del-cli": "^5.0.0",

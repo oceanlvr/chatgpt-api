@@ -1,5 +1,5 @@
+import crypto from 'crypto'
 import ExpiryMap from 'expiry-map'
-import { v4 as uuidv4 } from 'uuid'
 
 import * as types from './types'
 import { fetch } from './fetch'
@@ -90,7 +90,7 @@ export class ChatGPTAPI {
       onProgress?: (partialResponse: string) => void
     } = {}
   ): Promise<string> {
-    const { conversationId = uuidv4(), onProgress } = opts
+    const { conversationId = crypto.randomUUID(), onProgress } = opts
 
     const accessToken = await this.refreshAccessToken()
 
@@ -98,7 +98,7 @@ export class ChatGPTAPI {
       action: 'next',
       messages: [
         {
-          id: uuidv4(),
+          id: crypto.randomUUID(),
           role: 'user',
           content: {
             content_type: 'text',
