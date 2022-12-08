@@ -1,6 +1,6 @@
+import crypto from 'crypto'
 import ExpiryMap from 'expiry-map'
-import pTimeout, { TimeoutError } from 'p-timeout'
-import { v4 as uuidv4 } from 'uuid'
+import pTimeout from 'p-timeout'
 
 import * as types from './types'
 import { ChatGPTConversation } from './chatgpt-conversation'
@@ -97,7 +97,7 @@ export class ChatGPTAPI {
   ): Promise<string> {
     const {
       conversationId,
-      parentMessageId = uuidv4(),
+      parentMessageId = crypto.randomUUID(),
       timeoutMs,
       onProgress,
       onConversationResponse
@@ -117,7 +117,7 @@ export class ChatGPTAPI {
       action: 'next',
       messages: [
         {
-          id: uuidv4(),
+          id: crypto.randomUUID(),
           role: 'user',
           content: {
             content_type: 'text',
